@@ -170,7 +170,7 @@ export class SelectContainerComponent implements AfterViewInit, OnDestroy, After
 
       const dragging$ = mousedown$.pipe(
         filter((event) => !this.shortcuts.disableSelection(event)),
-        filter(() => !this.selectMode),
+        // filter(() => !this.selectMode),
         filter(() => !this.disableDrag),
         filter((event) => this.dragOverItems || event.target === this.host),
         switchMap(() => mousemove$.pipe(takeUntil(mouseup$))),
